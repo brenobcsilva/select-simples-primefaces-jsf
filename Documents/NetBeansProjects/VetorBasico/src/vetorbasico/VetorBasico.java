@@ -1,5 +1,6 @@
 package vetorbasico;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class VetorBasico {
@@ -34,14 +35,17 @@ public class VetorBasico {
 			System.out.print(vetorA[i] + " ");
 		}
 		System.out.println( );
+		
+		DecimalFormat df = new DecimalFormat("###,###.###");
+		
 		System.out.print("Vetor B = ");
 		for (int i = 0; i < vetorA.length; i++) {
-			System.out.print(vetorC[i] + " ");
+			System.out.print(df.format(vetorC[i]) + " ");
 		}
 		System.out.println( );
 		System.out.print("Vetor C = ");
 		for (int i = 0; i < vetorB.length; i++) {
-			System.out.print(vetorD[i] + " ");
+			System.out.print(df.format(vetorD[i]) + " ");
 		}
 		
 	}
