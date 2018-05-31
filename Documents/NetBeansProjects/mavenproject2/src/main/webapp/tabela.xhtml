@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form id="frmCadAluno">
+            <p:dataTable
+                emptyMessage="Não há dados"
+                paginator="true"
+
+                paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+
+                rows="2"
+                stickyHeader="true"
+                id="tabela"
+                value="#{beanAluno.alunos}"
+                var="a"
+                >
+
+                <p:column headerText="Cód.">
+                    <h:outputText value="#{a.cod}"/>
+                </p:column>
+
+                <p:column headerText="Nome">
+                    <h:outputText value="#{a.nome}"/>
+                </p:column>
+
+                <p:column headerText="Responsável">
+                    <h:outputText value="#{a.responsavel}"/>
+                </p:column>
+                
+                <p:column headerText="Editar" style="width: 55px; text-align: center">
+                    <p:commandButton oncomplete="" icon="ui-icon-search" update=":frmCadAluno:pEntrada">
+                        <f:setPropertyActionListener value="#{a}" target="#{beanAluno.aluno}"/>
+                        
+                    </p:commandButton>
+                </p:column>
+
+            </p:dataTable>
+        </h:form>
+    </h:body>
+</html>

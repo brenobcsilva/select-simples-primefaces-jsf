@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        
+        <h:form id="frmCadastro">
+            <h:panelGrid id="pEntrada" columns="2"
+                cellpadding="5">
+                <p:outputLabel for="txtCod" value="Codigo"/>
+                <p:inputText id="txtCod" value="#{beanAluno.aluno.cod}"/>
+                                <p:outputLabel for="txtCod" value="Codigo"/>
+                <p:inputText id="txtCod" value="#{beanAluno.aluno.cod}"/>
+                                <p:outputLabel for="txtCod" value="Codigo"/>
+                <p:inputText id="txtCod" value="#{beanAluno.aluno.cod}"/>
+                                <p:outputLabel for="txtCod" value="Codigo"/>
+                <p:inputText id="txtCod" value="#{beanAluno.aluno.cod}"/>
+                                <p:outputLabel for="txtCod" value="Codigo"/>
+                <p:inputText id="txtCod" value="#{beanAluno.aluno.cod}"/>
+                                <p:outputLabel for="txtCod" value="Codigo"/>
+                <p:inputText id="txtCod" value="#{beanAluno.aluno.cod}"/>
+                                <p:outputLabel for="txtCod" value="Codigo"/>
+                <p:inputText id="txtCod" value="#{beanAluno.aluno.cod}"/>
+                                <p:outputLabel for="txtCod" value="Codigo"/>
+                <p:inputText id="txtCod" value="#{beanAluno.aluno.cod}"/>
+                                <p:outputLabel for="txtCod" value="Codigo"/>
+                <p:inputText id="txtCod" value="#{beanAluno.aluno.cod}"/>
+            </h:panelGrid>
+        </h:form>
+        
+        <h:form id="frmPadrao">
+            <h:outputLabel value="Nome: " />
+            <p:inputText title="Informe seu nome."
+                         maxlength="20"
+                         id="txtNome"
+                         size="20"
+                         value="#{beanPrimeira.nome}"></p:inputText>
+            <p />
+            <h:outputLabel value="Data de Nascimento: "/>
+            <p:calendar id="txtData" effect="fold"
+                        pattern="dd/MM/yyyy"
+                        value="#{beanPrimeira.data}">
+            </p:calendar>
+
+            <p />
+            <p />
+            
+            <p:commandButton value="Mostrar Dados"
+                             update="grid"
+                             oncomplete="PF('dlg').show();"/>
+            
+            <p:dialog modal="true" widgetVar="dlg"
+                      showEffect="fade"
+                      hideEffect="fold"
+                      header="Dados do Cadastro"
+                      resizable="true">
+                <h:panelGrid id="grid" columns="2"
+                             cellpadding="5">
+                    <h:outputLabel value="Nome: "/>
+                    <h:outputLabel value="#{beanPrimeira.nome}" />
+
+                    <h:outputLabel value="Data de Nascimento"/>
+                    <h:outputLabel value="#{beanPrimeira.data}" />
+                </h:panelGrid>
+            </p:dialog>
+        </h:form>
+    </h:body>
+</html>
